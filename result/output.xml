@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.1 (Python 3.10.12 on linux)" generated="2026-01-09T16:37:57.615496" rpa="false" schemaversion="5">
+<suite id="s1" name="Iot Tests" source="/home/guy/augury/py/tests/iot_tests.robot">
+<kw name="Init Simulation" owner="AuguryRobotLibrary" type="SETUP">
+<status status="PASS" start="2026-01-09T16:37:57.649003" elapsed="0.000183"/>
+</kw>
+<test id="s1-t1" name="TEST1 – OTA AHN2" line="18">
+<kw name="Run Test 1" owner="AuguryRobotLibrary">
+<msg time="2026-01-09T16:37:57.650018" level="INFO">Simulation initialized
+--------------------------------------------------
+Test 1: OTA Update Happy Flow
+--------------------------------------------------
+Initial version: 33
+OTA Happy Flow PASSED version is 34</msg>
+<arg>AHN2_ABC11</arg>
+<arg>ahn2_34.swu</arg>
+<status status="PASS" start="2026-01-09T16:37:57.649812" elapsed="0.000263"/>
+</kw>
+<status status="PASS" start="2026-01-09T16:37:57.649372" elapsed="0.000874"/>
+</test>
+<test id="s1-t2" name="TEST1 – OTA Cassia" line="21">
+<kw name="Run Test 1" owner="AuguryRobotLibrary">
+<msg time="2026-01-09T16:37:57.651006" level="INFO">Simulation initialized
+--------------------------------------------------
+Test 1: OTA Update Happy Flow
+--------------------------------------------------
+Initial version: 33
+OTA Happy Flow PASSED version is 34</msg>
+<arg>CASSIA_ABC22</arg>
+<arg>cassia_34.swu</arg>
+<status status="PASS" start="2026-01-09T16:37:57.650821" elapsed="0.000234"/>
+</kw>
+<status status="PASS" start="2026-01-09T16:37:57.650491" elapsed="0.000712"/>
+</test>
+<test id="s1-t3" name="TEST1 – OTA Moxa" line="24">
+<kw name="Run Test 1" owner="AuguryRobotLibrary">
+<msg time="2026-01-09T16:37:57.651943" level="INFO">Simulation initialized
+--------------------------------------------------
+Test 1: OTA Update Happy Flow
+--------------------------------------------------
+Initial version: 33
+OTA Happy Flow PASSED version is 34</msg>
+<arg>MOXA_ABC33</arg>
+<arg>moxa_34.swu</arg>
+<status status="PASS" start="2026-01-09T16:37:57.651767" elapsed="0.000224"/>
+</kw>
+<status status="PASS" start="2026-01-09T16:37:57.651391" elapsed="0.000747"/>
+</test>
+<test id="s1-t4" name="TEST2 – EP1 – Battery OK" line="35">
+<kw name="Run Test 2" owner="AuguryRobotLibrary">
+<msg time="2026-01-09T16:37:57.652952" level="INFO">Test 2: Endpoint DFU with Backlog + Battery
+Battery over threshold 4000, PASS
+
+**************************************************
+Battery test finished
+
+Backlog is 0, PASS
+Backlog and battery test passed
+Update complete</msg>
+<arg>AHN2_ABC11_EP1_SERIAL</arg>
+<arg>4000</arg>
+<arg>0</arg>
+<arg>2</arg>
+<status status="PASS" start="2026-01-09T16:37:57.652765" elapsed="0.000236"/>
+</kw>
+<status status="PASS" start="2026-01-09T16:37:57.652347" elapsed="0.000824"/>
+</test>
+<test id="s1-t5" name="TEST2 – EP1 – Battery Low" line="38">
+<kw name="Run Test 2" owner="AuguryRobotLibrary">
+<msg time="2026-01-09T16:37:57.653987" level="INFO">Test 2: Endpoint DFU with Backlog + Battery
+Battery under threshold 1000, FAIL</msg>
+<msg time="2026-01-09T16:37:57.654098" level="FAIL">Battery under threshold</msg>
+<arg>AHN2_ABC11_EP1_SERIAL</arg>
+<arg>1000</arg>
+<arg>0</arg>
+<arg>3</arg>
+<status status="FAIL" start="2026-01-09T16:37:57.653803" elapsed="0.000612">Battery under threshold</status>
+</kw>
+<status status="FAIL" start="2026-01-09T16:37:57.653412" elapsed="0.001312">Battery under threshold</status>
+</test>
+<test id="s1-t6" name="TEST2 – Canary_A" line="43">
+<kw name="Run Test 2" owner="AuguryRobotLibrary">
+<msg time="2026-01-09T16:37:57.655845" level="INFO">Test 2: Endpoint DFU with Backlog + Battery
+Battery over threshold 4000, PASS
+
+**************************************************
+Battery test finished
+
+Backlog is 0, PASS
+Backlog and battery test passed
+Update complete</msg>
+<arg>AHN2_ABC11_Canary_A_SERIAL</arg>
+<arg>4000</arg>
+<arg>0</arg>
+<arg>2</arg>
+<status status="PASS" start="2026-01-09T16:37:57.655525" elapsed="0.000384"/>
+</kw>
+<status status="PASS" start="2026-01-09T16:37:57.655066" elapsed="0.001093"/>
+</test>
+<test id="s1-t7" name="TEST2 – Canary_A – BackLog&gt;0" line="46">
+<kw name="Run Test 2" owner="AuguryRobotLibrary">
+<msg time="2026-01-09T16:37:57.657318" level="INFO">Test 2: Endpoint DFU with Backlog + Battery
+Battery over threshold 4000, PASS
+
+**************************************************
+Battery test finished
+
+Backlog is greater than 0, FAIL</msg>
+<msg time="2026-01-09T16:37:57.657411" level="FAIL">Backlog is greater than 0</msg>
+<arg>AHN2_ABC11_Canary_A_SERIAL</arg>
+<arg>4000</arg>
+<arg>2</arg>
+<arg>3</arg>
+<status status="FAIL" start="2026-01-09T16:37:57.656983" elapsed="0.000571">Backlog is greater than 0</status>
+</kw>
+<status status="FAIL" start="2026-01-09T16:37:57.656449" elapsed="0.001374">Backlog is greater than 0</status>
+</test>
+<status status="FAIL" start="2026-01-09T16:37:57.616458" elapsed="0.041840"/>
+</suite>
+<statistics>
+<total>
+<stat pass="5" fail="2" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Iot Tests" id="s1" pass="5" fail="2" skip="0">Iot Tests</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
